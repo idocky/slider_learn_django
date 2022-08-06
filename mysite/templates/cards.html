@@ -1,0 +1,56 @@
+<section>
+    <div class="container">
+        <h1 class="text-3">ПАКЕТЫ УСЛУГ</h1>
+        <div class="row justify-content-center">
+            <div class="card product_card" style="width: 18rem; background-color: #cd7f32;">
+                <div class="card-body">
+                    <h5 class="card-title">BRONZE</h5>
+                    <p class="card-text">{{ c1.card_descr }}</p>
+                    <h3>{{ c1.card_price }} руб.</h3>
+                </div>
+            </div>
+            <div class="card product_card" style="width: 18rem; background-color: #c0c0c0;">
+                <div class="card-body">
+                    <h5 class="card-title">SILVER</h5>
+                    <p class="card-text">{{ c2.card_descr }}</p>
+                    <h3>{{ c2.card_price }} руб.</h3>
+                </div>
+            </div>
+            <div class="card product_card" style="width: 18rem; background-color: #ffd700;">
+                <div class="card-body">
+                    <h5 class="card-title">GOLD</h5>
+                    <p class="card-text">{{ c3.card_descr }}</p>
+                    <h3>{{ c3.card_price }} руб.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h1 class="text-3">Цены на услуги</h1>
+        <table class="table table_one">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Услуга</th>
+                <th scope="col">Старая цена</th>
+                <th scope="col">Новая цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in service_list %}
+
+            <tr>
+                <td>{{ row.title }}</td>
+                <td>
+                    <del>{{ row.old_price }}</del>
+                </td>
+                <td>{{ row.new_price }}</td>
+            </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
